@@ -8,14 +8,12 @@
 <body>
 <%@include file="../component/header.jsp"%>
 <%@include file="../component/nav.jsp"%>
-<h2>회원가입</h2>
-<form action="memberSave" method="post">
-    <input type="text" name="memberEmail" placeholder="이메일"> <br>
-    <input type="text" name="memberPassword" placeholder="비밀번호"> <br>
-    <input type="text" name="memberName" placeholder="이름"> <br>
-    <input type="text" name="memberMobile" placeholder="전화번호"> <br>
-    <%--<input type="file" name="memberProfile" multiple> <br>--%>
-    <input type="submit" value="회원가입">
+<h2>글 수정</h2>
+<form action="/board/boardUpdate" method="post">
+    <input type="hidden" placeholder="번호" name="id" value="${boardUpdate.id}"> <br>
+    <input type="text"  placeholder="제목을 입력하세요." name="boardTitle" value="${boardUpdate.boardTitle}"><br>
+    <input type="text"  placeholder="내용을 입력하세요." name="boardContents" value="${boardUpdate.boardContents}"><br>
+    <input type="submit" value="수정">
 </form>
 
 <%@include file="../component/footer.jsp"%>

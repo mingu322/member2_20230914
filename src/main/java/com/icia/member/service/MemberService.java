@@ -1,6 +1,7 @@
 package com.icia.member.service;
 
 import com.icia.member.dto.MemberDTO;
+import com.icia.member.dto.MemberFileDTO;
 import com.icia.member.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,10 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
+    public MemberDTO findById(Long id) {
+        return memberRepository.findById(id);
+    }
+
     public boolean login(MemberDTO memberDTO) {
         MemberDTO dto = memberRepository.login(memberDTO);
         if (dto != null){
@@ -31,4 +36,16 @@ public class MemberService {
     public void delete(Long id) {
         memberRepository.delete(id);
     }
+
+    public MemberDTO updateForm(Long id) {
+        return memberRepository.updateForm(id);
+    }
+
+    public void update(MemberDTO memberDTO) {
+        memberRepository.update(memberDTO);
+    }
+
+    /*public List<MemberFileDTO> findFile(Long id) {
+        return memberRepository.findFile(id);
+    }*/
 }

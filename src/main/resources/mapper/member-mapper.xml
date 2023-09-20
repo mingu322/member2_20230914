@@ -13,10 +13,24 @@
     <select id="findAll" resultType="member">
         select * from member_table
     </select>
+    <select id="findById" parameterType="Long" resultType="member">
+        select * from member_table where id=#{id}
+    </select>
     <select id="login" parameterType="member" resultType="member">
         select * from member_table where memberEmail=#{memberEmail} and memberPassword=#{memberPassword}
     </select>
     <delete id="delete" parameterType="Long">
         delete from member_table where id=#{id}
     </delete>
+    <select id="updateForm" parameterType="Long" resultType="member">
+        select * from member_table where id=#{id}
+    </select>
+    <update id="update" parameterType="member">
+        update member_table
+        set memberEmail=#{memberEmail}, memberPassword=#{memberPassword}, memberName=#{memberName}, memberMobile=#{memberMobile}
+        where id=#{id}
+    </update>
+    <!--<select id="findFile" parameterType="Long" resultType="memberProfile">
+        select * from member_file_table where memberId=#{memberId}
+    </select>-->
 </mapper>

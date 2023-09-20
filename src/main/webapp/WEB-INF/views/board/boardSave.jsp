@@ -8,15 +8,14 @@
 <body>
 <%@include file="../component/header.jsp"%>
 <%@include file="../component/nav.jsp"%>
-<h2>회원가입</h2>
-<form action="memberSave" method="post">
-    <input type="text" name="memberEmail" placeholder="이메일"> <br>
-    <input type="text" name="memberPassword" placeholder="비밀번호"> <br>
-    <input type="text" name="memberName" placeholder="이름"> <br>
-    <input type="text" name="memberMobile" placeholder="전화번호"> <br>
-    <%--<input type="file" name="memberProfile" multiple> <br>--%>
-    <input type="submit" value="회원가입">
-</form>
+<h2>글 작성</h2>
+    <form action="boardSave" method="post">
+        <input type="text" name="boardTitle" placeholder="제목"> <br>
+        <input type="text" name="boardPass" placeholder="비밀번호"> <br>
+        <input type="text" name="boardWriter" placeholder="작성자"> <br>
+        <input type="text" name="boardContents" placeholder="내용"> <br>
+        <input type="submit" value="작성">
+    </form>
 
 <%@include file="../component/footer.jsp"%>
 </body>
